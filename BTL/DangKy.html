@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="DangKy.css">
+</head>
+<body>
+<header>
+    <div class="register-container">
+        <h2>
+            Đăng ký
+        </h2>
+        <form id="register-form">
+            <div class="input-group">
+                <label for="fullname">Họ và Tên</label>
+                <input type="text" id="fullname" name="fullname" required>
+            </div>
+        <form id="register-form">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <small id="emailHelp" class="form-text text-muted"></small>
+            </div>
+            <div class="input-group">
+                <label for="password">Mật khẩu</label>
+                <input type="text" id="password" name="password" required>
+            </div>
+            <button type="button" onclick="dienEmail()">Đăng ký</button> 
+            <button class="a"><a href="index.html">Quay lại Đăng Nhập</a></button>
+               
+        </form>
+    </div>
+</header>
+    
+    <script>
+        function dienEmail(){ /*Được tạo để định nghĩa để khi ấn vào đăng ký ở bên trên */
+            var email = document.getElementById("email").value;
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if(!emailRegex.test(email)){
+                alert("Không hợp lệ!")
+                return;
+            }
+            register();
+        }
+        function register(){
+            var fullname = document.getElementById("fullname").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var usernameRegex = /^[a-zA-Z0-9_]+$/;
+            if(!usernameRegex.test(fullname)){
+                alert("Tên đăng nhập không hợp lệ!");
+                return;
+            }
+            if(password.lenght < 8){
+                alert("Mật khẩu không được phép dưới 8 ký tự");
+                return;
+            }
+            var account = {
+                fullname: fullname,
+                email: email,
+                password: password
+            };
+            localStorage.setItem("account",JSON.stringify(account));
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger Restaurant</title>
+    <link rel="stylesheet" href="Lapxuong.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="Trangbanhang1.html">Menu</a></li>
+                    <li><a href="Thongtincuahang.html">Thông tin cửa hàng</a></li>
+                    <li><a href="New.html">News</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="hero">
+        <div class="container">
+            <marquee><h1>WELCOME TO MY RESTAURANT!</h1></marquee>
+        </div>
+    </section>
+    <div class="container">
+        <div class="name-food">
+            <img id="lapxuong-img" alt="">
+            <h2>Lạp xưởng</h2>
+            <div class="price">
+                <span class="original-price">55.000VNĐ</span>
+                <span class="discounted-price">45.000VNĐ</span>
+            </div>
+            <p>Thịt tươi</p>
+            <h3>Nguyên liệu chính:</h3>
+            <ul>
+                <li>Thịt lợn: Đây là thành phần chính và chiếm tỷ lệ cao nhất trong lạp xưởng. Thường sử dụng thịt lợn nạc hoặc thịt lợn có lẫn mỡ để đạt độ ngậy và mềm mại.</li>
+                <li>Mỡ lợn: Được sử dụng để tăng độ béo và thêm hương vị cho lạp xưởng.</li>
+                <li>Gia vị: Bao gồm muối, tiêu, tỏi, hành, rượu, đường, MSG và các loại gia vị khác để tạo hương vị đặc trưng.</li>
+                <li>Chất làm đặc: Như bột gạo, bột mì, trứng, sữa... để giúp lạp xưởng có kết cấu chắc chắn và không bị vỡ tan khi chế biến.</li>
+                <li>Cách bảo quản: Lạp xưởng thường được hun khói, làm khô, ngâm muối hoặc làm từ thịt nguội để kéo dài thời gian bảo quản.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="quantity">
+        <button class="quantity-btn" onclick="decreaseQuantity()">-</button>
+        <span id="quantity-display">0</span>
+        <button class="quantity-btn" onclick="increaseQuantity()">+</button>
+    </div>
+    <div class="total-price">
+        <p>Tổng số tiền: <span id="total-price-display">0</span> VNĐ</p>
+    </div>
+    <div class="order">
+        <button class="order-btn" onclick="placeOrder()">Đặt Hàng</button>
+    </div>
+    <script>
+        let quantity = 0;
+        const lapxuong = 45000;
+
+        function updateTotalPrice() {
+            const totalPrice = quantity * lapxuong;
+            document.getElementById('total-price-display').textContent = totalPrice.toLocaleString('vi-VN');
+        }
+
+        function increaseQuantity() {
+            quantity++;
+            document.getElementById('quantity-display').textContent = quantity;
+            updateTotalPrice();
+        }
+
+        function decreaseQuantity() {
+            if (quantity > 0) {
+                quantity--;
+                document.getElementById('quantity-display').textContent = quantity;
+                updateTotalPrice();
+            }
+        }
+
+        function placeOrder() {
+            if (quantity > 0) {
+                alert(`Bạn đã đặt ${quantity} lạp xưởng với tổng số tiền là ${quantity * lapxuong} VNĐ thành công.`);
+            } else {
+                alert("Bạn chưa chọn số lượng hamburger.");
+            }
+        }
+    </script>
+    <footer>
+        <div class="container">
+            <p>huy25xvc@gmail.com</p>
+            <p>0984676192</p>
+            <p>Vân Côn - Hoài Đức - Hà Nội</p>
+        </div>
+    </footer>
+</body>
+</html>

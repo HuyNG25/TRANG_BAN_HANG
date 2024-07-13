@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger Restaurant</title>
+    <link rel="stylesheet" href="Khoaitaychien.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="Trangbanhang1.html">Menu</a></li>
+                    <li><a href="Thongtincuahang.html">Thông tin cửa hàng</a></li>
+                    <li><a href="New.html">News</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="hero">
+        <div class="container">
+            <marquee><h1>WELCOME TO MY RESTAURANT!</h1></marquee>
+        </div>
+    </section>
+    <div class="container">
+        <div class="name-food">
+            <img id="khoai-img" alt="">
+            <h2>Khoai tây chiên</h2>
+            <div class="price">
+                <span class="original-price">34.000VNĐ</span>
+                <span class="discounted-price">25.000VNĐ</span>
+            </div>
+            <p>Thơm ngon - bổ rẻ</p>
+            <h3>Nguyên liệu chính:</h3>
+            <ul>
+                <li>Khoai tây: Đây là thành phần chính và chiếm tỷ lệ lớn nhất. Thường sử dụng các loại khoai tây như Russet, Yukon Gold hoặc Red Bliss vì chúng có vỏ mỏng, thịt khoai vừa sợi vừa bở.</li>
+                <li>Dầu ăn: Dùng để chiên khoai tây. Các loại dầu thông dụng như dầu hạt cải, dầu đậu nành hoặc dầu ôliu đều có thể sử dụng.</li>
+                <li>Muối: Được rắc lên khoai tây chiên để tạo vị mặn và đậm đà.</li>
+                <li>Phô mai: Có thể là phô mai cheddar, phô mai American hoặc các loại phô mai khác để tạo vị béo, ngậy.</li>
+                <li>Gia vị (tùy chọn): Một số người có thể thêm gia vị như tiêu, tỏi bột, paprika hoặc các loại gia vị khác để tăng thêm hương vị.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="quantity">
+        <button class="quantity-btn" onclick="decreaseQuantity()">-</button>
+        <span id="quantity-display">0</span>
+        <button class="quantity-btn" onclick="increaseQuantity()">+</button>
+    </div>
+    <div class="total-price">
+        <p>Tổng số tiền: <span id="total-price-display">0</span> VNĐ</p>
+    </div>
+    <div class="order">
+        <button class="order-btn" onclick="placeOrder()">Đặt Hàng</button>
+    </div>
+    <script>
+        let quantity = 0;
+        const khoai = 25000;
+
+        function updateTotalPrice() {
+            const totalPrice = quantity * khoai;
+            document.getElementById('total-price-display').textContent = totalPrice.toLocaleString('vi-VN');
+        }
+
+        function increaseQuantity() {
+            quantity++;
+            document.getElementById('quantity-display').textContent = quantity;
+            updateTotalPrice();
+        }
+
+        function decreaseQuantity() {
+            if (quantity > 0) {
+                quantity--;
+                document.getElementById('quantity-display').textContent = quantity;
+                updateTotalPrice();
+            }
+        }
+
+        function placeOrder() {
+            if (quantity > 0) {
+                alert(`Bạn đã đặt ${quantity} khoai tây chiên với tổng số tiền là ${quantity * khoai} VNĐ thành công.`);
+            } else {
+                alert("Bạn chưa chọn số lượng khoai tây chiên.");
+            }
+        }
+    </script>
+    <footer>
+        <div class="container">
+            <p>huy25xvc@gmail.com</p>
+            <p>0984676192</p>
+            <p>Vân Côn - Hoài Đức - Hà Nội</p>
+        </div>
+    </footer>
+</body>
+</html>

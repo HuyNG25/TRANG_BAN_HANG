@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #444;
+    color: white;
+    padding: 15px 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #ffd700;
+}
+
+#hero {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+}
+
+#hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.name-food {
+    text-align: center;
+    padding: 20px;
+}
+
+.name-food img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.price {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: red;
+    margin-right: 10px;
+}
+
+.discounted-price {
+    color: green;
+    font-weight: bold;
+}
+
+.quantity {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.quantity-btn {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.quantity-btn:hover {
+    background-color: #555;
+}
+
+#quantity-display {
+    font-size: 24px;
+    margin: 0 20px;
+}
+
+.total-price {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+.order {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.order-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.order-btn:hover {
+    background-color: #218838;
+}
+
+footer {
+    background-color: #444;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+#dau-img {
+    background-image: url('./Sinhto.png');
+    background-size: cover;
+    background-position: center;
+    max-width: 1000px;
+    height: 500px;
+    transition: background-image 0.3s ease;
+}
+#dau-img:hover {
+    background-image: url('./Sinhto1.png');
+}
+.href:hover{
+    color: rgb(141, 141, 255);
+}

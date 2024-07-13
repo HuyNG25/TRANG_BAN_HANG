@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Đăng nhập</h2>
+        <form onsubmit="return login()">
+            <div class="input-group">
+                <label for="username">Tên đăng nhập</label>
+                <input type="text" id="username" name="username">
+            </div>
+            <div class="input-group">
+                <label for="password">Mật khẩu</label>
+                <input type="text" id="password" name="password">
+            </div>
+            <button type="submit">Đăng nhập</button>
+            <button type="submit"><a href="DangKy.html">Đăng ký</a></button>
+            <a href="DangKy.html">Quên mật khẩu?</a>
+        </form>
+    </div>
+    <script>
+        function login(){
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var storedAccount = JSON.parse(localStorage.getItem("account"));
+            if (storedAccount && username === storedAccount.fullname && password === storedAccount.password){
+                window.location.href = "Trangbanhang1.html";
+                return false;
+            } else{
+                alert("Tên đăng nhập hoặc mật khẩu sai!");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

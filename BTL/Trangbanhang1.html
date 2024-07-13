@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food</title>
+    <link rel="stylesheet" href="Trangbanhang1.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="Trangbanhang1.html" class="href">Menu</a></li>
+                    <li><a href="Thongtincuahang.html" class="href">Thông tin cửa hàng</a></li>
+                    <li><a href="New.html" class="href">News</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="hero">
+        <div class="container1">
+            <marquee><h1>WELCOME TO MY RESTAURANT!</h1></marquee>
+        </div>
+    </section>
+    <section id="menu">
+        <div class="container">
+            <h2 id="a1">Thực đơn</h2>
+            <div id="main-image">
+                <img src="Chicken.png" alt="Main Image" id="slide-image">
+            </div>
+            <div id="A1-container">
+                <div class="menu-item">
+                    <a href="Chicken.html">
+                        <img src="Chicken.png" alt="Chicken" class="A1 thumbnail">
+                    </a>
+                    <h2>Gà rán KFC</h2>
+                    <p>Một loại gà rán nhưng nó đảm bảo chất lượng</p>
+                    <span>125.000VNĐ</span>
+                </div>
+                <div class="menu-item">
+                    <a href="Hambuger.html">
+                        <img src="hambuger.png" alt="Hambuger" class="A1 thumbnail">
+                    </a>
+                    <h2>Hambuger</h2>
+                    <p>Có rau củ quả đầy đủ dinh dưỡng!</p>
+                    <span>50.000VNĐ</span>
+                </div>
+                <div class="menu-item">
+                    <a href="Khoaitaychien.html">
+                        <img src="Khoaitaychien.png" alt="Khoai tây chiên" class="A1 thumbnail">
+                    </a>
+                    <h2>Khoai tây chiên</h2>
+                    <p>Một loại thức ăn nhanh!</p>
+                    <span>35.000VNĐ</span>
+                </div>
+                <div class="menu-item">
+                    <a href="Lapxuong.html">
+                        <img src="Lapxuong.png" alt="Lạp xưởng" class="A1 thumbnail">
+                    </a>
+                    <h2>Lạp xưởng</h2>
+                    <p>Món ăn ưa thích đường phố!</p>
+                    <span>55.000VNĐ</span>
+                </div>
+                <div class="menu-item">
+                    <a href="Sinhto.html">
+                        <img src="Sinhto.png" alt="Sinh tố dâu" class="A1 thumbnail">
+                    </a>
+                    <h2>Sinh tố dâu</h2>
+                    <p>Thức uống giải khát được ưa chuộng</p>
+                    <span>25.000VNĐ</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p class="b1">huy25xvc@gmail.com</p> 
+            <p class="b2">0984676192</p> 
+            <p class="b3">Vân Côn - Hoài Đức - Hà Nội</p>
+        </div>
+    </footer>
+    <script src="jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.thumbnail').hover(function() {
+                let newSrc = $(this).attr('src');
+                $('#slide-image').attr('src', newSrc);
+            });
+        });
+    </script>
+</body>
+</html>

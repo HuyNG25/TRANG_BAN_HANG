@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger Restaurant</title>
+    <link rel="stylesheet" href="Hambuger.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="Trangbanhang1.html">Menu</a></li>
+                    <li><a href="Thongtincuahang.html">Thông tin cửa hàng</a></li>
+                    <li><a href="New.html">News</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="hero">
+        <div class="container">
+            <marquee><h1>WELCOME TO MY RESTAURANT!</h1></marquee>
+        </div>
+    </section>
+    <div class="container">
+        <div class="name-food">
+            <img id="burger-img" alt="">
+            <h2>Hamburger</h2>
+            <div class="price">
+                <span class="original-price">50.000VNĐ</span>
+                <span class="discounted-price">35.000VNĐ</span>
+            </div>
+            <p>Có rau củ quả đầy đủ dinh dưỡng!</p>
+            <h3>Nguyên liệu chính:</h3>
+            <ul>
+                <li>Thịt bò xay: Đây là thành phần chính và chiếm tỷ lệ lớn nhất trong hamburger. Thường sử dụng thịt bò xay nhuyễn có hàm lượng béo khoảng 20-30%.</li>
+                <li>Bánh hamburger: Loại bánh mì tròn, mềm và có kích thước phù hợp để bọc lấy miếng thịt bò.</li>
+                <li>Rau củ: Các loại rau như xà lách, cà chua, hành tây, dưa chuột thường được sử dụng để tạo thêm hương vị và kết cấu cho hamburger.</li>
+                <li>Phô mai: Có thể là phô mai cheddar, phô mai American hoặc các loại phô mai khác để tạo vị béo, ngậy.</li>
+                <li>Các gia vị: Muối, tiêu, hành, tỏi, sốt mayonnaise, sốt ketchup... để tăng thêm hương vị cho hamburger.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="quantity">
+        <button class="quantity-btn" onclick="decreaseQuantity()">-</button>
+        <span id="quantity-display">0</span>
+        <button class="quantity-btn" onclick="increaseQuantity()">+</button>
+    </div>
+    <div class="total-price">
+        <p>Tổng số tiền: <span id="total-price-display">0</span> VNĐ</p>
+    </div>
+    <div class="order">
+        <button class="order-btn" onclick="placeOrder()">Đặt Hàng</button>
+    </div>
+    <script>
+        let quantity = 0;
+        const pricePerBurger = 35000;
+
+        function updateTotalPrice() {
+            const totalPrice = quantity * pricePerBurger;
+            document.getElementById('total-price-display').textContent = totalPrice.toLocaleString('vi-VN');
+        }
+
+        function increaseQuantity() {
+            quantity++;
+            document.getElementById('quantity-display').textContent = quantity;
+            updateTotalPrice();
+        }
+
+        function decreaseQuantity() {
+            if (quantity > 0) {
+                quantity--;
+                document.getElementById('quantity-display').textContent = quantity;
+                updateTotalPrice();
+            }
+        }
+
+        function placeOrder() {
+            if (quantity > 0) {
+                alert(`Bạn đã đặt ${quantity} hamburger(s) với tổng số tiền là ${quantity * pricePerBurger} VNĐ thành công.`);
+            } else {
+                alert("Bạn chưa chọn số lượng hamburger.");
+            }
+        }
+    </script>
+    <footer>
+        <div class="container">
+            <p>huy25xvc@gmail.com</p>
+            <p>0984676192</p>
+            <p>Vân Côn - Hoài Đức - Hà Nội</p>
+        </div>
+    </footer>
+</body>
+</html>
